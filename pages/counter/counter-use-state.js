@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-const Container = ({ setCounter }) => (
+const Container = ({ children }) => (
   <div>
-    <AddOneButton setCounter={setCounter} />
+    {children}
   </div>
 )
 
@@ -20,7 +20,9 @@ export default function CounterUseState() {
   const [counter, setCounter] = useState(0)
   return (
     <div>
-      <Container setCounter={setCounter} />
+      <Container>
+        <AddOneButton setCounter={setCounter} />
+      </Container>
       <Counter counter={counter} />
     </div>
   )
