@@ -8,4 +8,10 @@ const useStore = create(set => ({
   addToCart: () => set(state => ({ cartCount: state.cartCount + 1 })),
 }))
 
+export const useLogin = () => useStore((state) => state.login)
+export const useLogout = () => useStore((state) => state.logout)
+export const useAddToCart = () => useStore((state) => state.addToCart)
+export const useUser = () => useStore((state) => state.user)
+export const useCartCount = () => useStore((state) => state.cartCount)
+
 export default useStore
